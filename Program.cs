@@ -11,7 +11,9 @@ builder.Services.AddCors(options =>
 		name: originsSettingsName,
         policy  =>
         {
-            policy.WithOrigins("http://localhost");
+            string[] origins = { "http://localhost" };
+
+            policy.WithOrigins(origins);
         });
 });
 
