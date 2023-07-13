@@ -5,7 +5,7 @@
  ```
 git clone https://github.com/pepeien/projects-api.git
 cd projects-api/
-npm install && npm start
+docker build -t projects-api && docker run -dp 127.0.0.1:9001:9001 projects-api
 ```
 
 ### Setting up
@@ -45,18 +45,6 @@ string[] origins = { "http://localhost:4200", "http://localhost:3000" };
 ##### Requirements
 
 - [Docker](https://docs.docker.com/engine/install) (Windows, Linux, Mac)
-
-### Running W/O Docker
-
-1. At the root of the project;
-
-2. Issue `npm install` wait for the installation;
-
-3. Issue `npm start`;
-
-##### Requirements
-
-- [npm](https://nodejs.org/en/download/package-manager) (Windows, Linux, Mac)
 
 ## Documentation
 
