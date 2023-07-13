@@ -24,17 +24,28 @@ string[] origins = { "http://localhost:4200", "http://localhost:3000" };
 
 2. Still at the root of the project, reach for development `appsettings.Development.json` or for production `appsettings.json`;
 
-3. Change if necessary `ProjectStatics.ApiId` for the desired api key name;
 
-4. Change `ProjectStatics.TargetUser` for the targeted user `username`;
+3. These are the variables and their descriptions:
 
-5. Change if necessary `ApiKeysDatabase.ConnectionString` to reflect the `MongoDB` address;
+| Variable       | Description  | Type           | Default | Required |
+|:--------------:|:-------------|:--------------:|:--------:|:--------:|
+| ProjectStatics.ApiId             | API key name                   | String  | ghub:1  | ✅ |
+| ProjectStatics.TargetUser        | Targeted user `username`       | String  | pepeien | ✅ |
+| ApiKeysDatabase.ConnectionString | `MongoDB` address              | String  | mongodb://mongodb:27017 | ✅ |
+| ApiKeysDatabase.DatabaseName     | `MongoDB` database name        | String  | portfolio | ✅ |
+| ApiKeysDatabase.CollectionName   | `MongoDB` collection name      | String  | api_keys  | ✅ |
 
-6. Change if necessary `ApiKeysDatabase.DatabaseName` to reflect the `MongoDB` database name;
+3. This project doesn't deal with database authentication, you may change the code at `ApiKeysDatabaseSettings.cs` and `appsettings.json`;
 
-7. Change if necessary `ApiKeysDatabase.CollectionName` to reflect the `MongoDB` collection name;
+4. After the first run and creation of the `api_keys` collection, add the entry:
 
-9. This project doesn't deal with database authentication, you may change the code at `ApiKeysDatabaseSettings.cs` and `appsettings.json`;
+```
+{
+    id: {ProjectStatics.ApiId},
+    value: {GITHUB_API_KEY},
+    origin: {ANY_DESCRIPTION}
+}
+```
 
 ### Running with Docker CLI
 
