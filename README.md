@@ -59,4 +59,4 @@ string[] origins = { "http://localhost:4200", "http://localhost:3000" };
 
 ## Documentation
 
-You can reach to the [Developer Portal](https://api.ericodesu.com/#/service/projects) to a more hands-on driven information.
+You can reach to the [Developer Portal](https://api.erickfrederick.com/#/service/projects) to a more hands-on driven information.
